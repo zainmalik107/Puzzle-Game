@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Puzzle Game</title>
+</head>
+<body>
+    
+    <div class="main_table_div">
+        <h1 class="header_Styling">
+            Welcome to Puzzle Game!!!!
+        </h1>
+        <table class="main_table_styling">
+            <tr class="table_data">
+                <td class="table_data table_text_styling" draggable="true" ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="drag(event)" id="box_1"></td>
+                <td class="table_data table_text_styling" draggable="true" ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="drag(event)" id="box_2"></td>
+                <td class="table_data table_text_styling" draggable="true" ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="drag(event)" id="box_3"></td>
+            </tr>
+            <tr class="table_data">
+                <td class="table_data table_text_styling" draggable="true" ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="drag(event)" id="box_4"></td>
+                <td class="table_data table_text_styling" draggable="true" ondragover="allowDrop(event)"    ondrop="drop(event)" ondragstart="drag(event)" id="box_5"></td>
+                <td class="table_data table_text_styling" draggable="true" ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="drag(event)" id="box_6"></td>
+            </tr>
+            <tr class="table_data">
+                <td class="table_data table_text_styling" draggable="true" ondragover="allowDrop(event)"   ondrop="drop(event)" ondragstart="drag(event)" id="box_7"></td>
+                <td class="table_data table_text_styling" draggable="true" ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="drag(event)" id="box_8"></td>
+                <td class="table_data table_text_styling" draggable="true" ondragover="allowDrop(event)"  ondrop="drop(event)" ondragstart="drag(event)" id="box_9"></td>
+            </tr>
+        </table>
+        <div class="btn_div">
+            <button class="btn_styling" onclick="random()">Start Game</button>
+            <button class="btn_styling" onclick="finishGame()">End Game</button>
+        </div>
+        
+    </div>
+    <script>
+        function random() {
+            let box1 = Math.floor(Math.random() * 10);
+            let box2 = Math.floor(Math.random() * 10);
+            let box3 = Math.floor(Math.random() * 10);
+            let box4 = Math.floor(Math.random() * 10);
+            let box5 = Math.floor(Math.random() * 10);
+            let box6 = Math.floor(Math.random() * 10);
+            let box7 = Math.floor(Math.random() * 10);
+            let box8 = Math.floor(Math.random() * 10);
+            let box9 = Math.floor(Math.random() * 10);
+
+            while(box1 === box2 || box1 === box3 || box1 === box4 || box1 === box5 || box1 === box6 || box1 === box7 || box1 === box8 || box1 === box9 || box2 === box3 || box2 === box4 || box2 === box5 || box2 === box6 || box2 === box7 || box2 === box8 || box2 === box9 || box3 === box4 || box3 === box5 || box3 === box6 || box3 === box7 || box3 === box8 || box3 === box9 || box4 === box5 || box4 === box6 || box4 === box7 || box4 === box8 || box4 === box9 || box5 === box6 || box5 === box7 || box5 === box8 || box5 === box9 || box6 === box7 || box6 === box8 || box6 === box9 || box7 === box8 || box7 === box9 || box8 === box9 || box1 === 0 || box2 === 0 || box3 === 0 || box4 === 0 || box5 === 0 || box6 === 0|| box7 === 0 || box8 === 0 || box9 === 0){
+                box1 = Math.floor(Math.random() * 10);
+                box2 = Math.floor(Math.random() * 10);
+                box3 = Math.floor(Math.random() * 10);
+                box4 = Math.floor(Math.random() * 10);
+                box5 = Math.floor(Math.random() * 10);
+                box6 = Math.floor(Math.random() * 10);
+                box7 = Math.floor(Math.random() * 10);
+                box8 = Math.floor(Math.random() * 10);
+                box9 = Math.floor(Math.random() * 10);
+                document.getElementById("box_1").innerHTML = box1;
+                document.getElementById("box_2").innerHTML = box2;
+                document.getElementById("box_3").innerHTML = box3;
+                document.getElementById("box_4").innerHTML = box4;
+                document.getElementById("box_5").innerHTML = box5;
+                document.getElementById("box_6").innerHTML = box6;
+                document.getElementById("box_7").innerHTML = box7;
+                document.getElementById("box_8").innerHTML = box8;
+                document.getElementById("box_9").innerHTML = box9;
+
+            }
+
+        }
+        function drag (event) {
+            event.dataTransfer.setData(Number, event.target.id);
+        }
+        function allowDrop(event){
+            event.preventDefault();
+        }
+        function drop(e){
+            e.preventDefault();
+			var data = e.dataTransfer.getData(Number);
+			var draggedNum = parseInt(document.getElementById(data).innerHTML);
+			var targetNum = parseInt(e.target.innerHTML);
+			document.getElementById(data).innerHTML = targetNum;
+			e.target.innerHTML = draggedNum;
+        }
+        function finishGame() {
+            let box1 = document.getElementById('box_1').innerHTML;
+            console.log("Value of Box1 is: " +box1);
+            let box2 = document.getElementById('box_2').innerHTML;
+            console.log("Value of Box2 is: " +box2);
+            let box3 = document.getElementById('box_3').innerHTML;
+            console.log("Value of Box3 is: " +box3);
+            let box4 = document.getElementById('box_4').innerHTML;
+            console.log("Value of Box4 is: " +box4);
+            let box5 = document.getElementById('box_5').innerHTML;
+            console.log("Value of Box5 is: " +box5);
+            let box6 = document.getElementById('box_6').innerHTML;
+            console.log("Value of Box6 is: " +box6);
+            let box7 = document.getElementById('box_7').innerHTML;
+            console.log("Value of Box7 is: " +box7);
+            let box8 = document.getElementById('box_8').innerHTML;
+            console.log("Value of Box8 is: " +box8);
+            let box9 = document.getElementById('box_9').innerHTML;
+            console.log("Value of Box9 is: " +box9);
+
+            if(box1 == 1 && box2 == 2 && box3 == 3 && box4 == 4 && box5 == 5 && box6 == 6 && box7 == 7 && box8 == 8 && box9 == 9){
+                alert("Congratulations!!! You Won");
+                document.getElementById('box_1').innerHTML = "";
+                document.getElementById('box_2').innerHTML = "";
+                document.getElementById('box_3').innerHTML = "";
+                document.getElementById('box_4').innerHTML = "";
+                document.getElementById('box_5').innerHTML = "";
+                document.getElementById('box_6').innerHTML = "";
+                document.getElementById('box_7').innerHTML = "";
+                document.getElementById('box_8').innerHTML = "";
+                document.getElementById('box_9').innerHTML = "";
+            }
+            else{
+                alert("Sorry!! Try again");
+            }
+
+        }
+    </script>
+</body>
+
+</html>

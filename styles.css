@@ -1,0 +1,45 @@
+*{
+    background-color: blueviolet;
+   
+}
+.main_table_div{
+    padding-left: 30%;
+    padding-top: 1%;
+}
+.main_table_styling{
+    border: 2px solid black;
+    height: 60vh;
+    width: 40vw;
+    padding-left: 2%;
+    border-collapse: collapse;
+}
+.table_data{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding-left: 12%;
+}
+.table_text_styling{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    color: white;
+    background-color:darkseagreen;
+}
+.header_Styling{
+    padding-left: 10%;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+.btn_div{
+    display: flex;
+    gap: 90px;
+    padding-top: 18px;
+}
+.btn_styling{
+    background-color: green;
+    border: 2px solid black;
+    border-radius: 7px;
+    height: 6vh;
+    width: 17vw;
+    color:white;
+    font-size: large;
+}
